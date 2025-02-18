@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import DataEntry from './Pages/DataEntry';
+import TopBar from './Modules/TopBar';
+import DataPresentation from './Pages/DataPresentation';
+import Overview from './Pages/Overview';
+import { useEffect, useState } from 'react';
+import DataService from './Services/DataService';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+interface JournalEntry {
+  type: string;
+  comment: string;
+  date: string;
+  distance: number;
+  cost: number;
+}
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [entries, setEntries] = useState<JournalEntry[]>([]);
+
+  // Function to fetch all entries from the DataService when the component mounts
+  useEffect(() => {
+    const fetchedEntries = DataService.getAllEntries();
+    setEntries(fetchedEntries);
+  }, []); // This will only run on the first render (empty dependency array)
+
+  // Function to handle adding a new entry
+  const addNewEntry = (entry: JournalEntry) => {
+    DataService.addEntry(entry); // Add the entry to the DataService
+    const updatedEntries = DataService.getAllEntries(); // Get the updated entries
+    setEntries(updatedEntries); // Update the state to reflect the new entries
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="flex flex-col px-2">
+        <div className="sticky top-0">
+          <TopBar />
+        </div>
+        <div>
+          <BrowserRouter>
+            <Routes>
+              <Route index element={<Overview />} />
+              <Route path="dataEntry" element={<DataEntry addNewEntry={addNewEntry}/>}/>
+              <Route path="dataPresentation" element={<DataPresentation entries={entries} />}  />
+            </Routes>
+          </BrowserRouter>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

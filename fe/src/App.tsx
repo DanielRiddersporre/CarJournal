@@ -34,11 +34,11 @@ function App() {
   return (
     <>
       <div className="flex flex-col px-2">
-        <div className="sticky top-0">
-          <TopBar />
-        </div>
         <div>
           <BrowserRouter>
+            <div className="sticky top-0">
+              <TopBar />
+            </div>
             <Routes>
               <Route index element={<Overview />} />
               <Route path="dataEntry" element={<DataEntry addNewEntry={addNewEntry}/>}/>

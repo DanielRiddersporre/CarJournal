@@ -10,5 +10,9 @@
     <ItemGroup>
         <Reference Include="../be-domain/be-domain.csproj" />
     </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="repositories\" />
+    </ItemGroup>
 
 </Project>

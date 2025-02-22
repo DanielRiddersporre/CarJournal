@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "GSWRVJ0z/LQ=",
+  "success": true,
+  "projectFilePath": "/home/daniel-riddersporre/code/applications/CarJournal/be-api/be-api.csproj",
+  "expectedPackageFiles": [
+    "/home/daniel-riddersporre/.nuget/packages/microsoft.aspnetcore.openapi/9.0.1/microsoft.aspnetcore.openapi.9.0.1.nupkg.sha512",
+    "/home/daniel-riddersporre/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -6,5 +6,9 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
     </PropertyGroup>
+    
+    <ItemGroup>
+        <Reference Include="../be-domain/be-domain.csproj" />
+    </ItemGroup>
 
 </Project>

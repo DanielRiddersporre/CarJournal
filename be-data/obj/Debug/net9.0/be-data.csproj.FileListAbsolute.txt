@@ -11,3 +11,5 @@
 /home/daniel-riddersporre/code/applications/CarJournal/be-data/obj/Debug/net9.0/refint/be-data.dll
 /home/daniel-riddersporre/code/applications/CarJournal/be-data/obj/Debug/net9.0/be-data.pdb
 /home/daniel-riddersporre/code/applications/CarJournal/be-data/obj/Debug/net9.0/ref/be-data.dll
+/home/daniel-riddersporre/code/applications/CarJournal/be-data/bin/Debug/net9.0/be-data.runtimeconfig.json
+/home/daniel-riddersporre/code/applications/CarJournal/be-data/obj/Debug/net9.0/be-data.genruntimeconfig.cache

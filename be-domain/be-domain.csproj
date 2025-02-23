@@ -9,7 +9,6 @@
 
     <ItemGroup>
       <Folder Include="mappers\" />
-      <Folder Include="services\" />
     </ItemGroup>
 
 </Project>

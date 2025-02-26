@@ -8,7 +8,7 @@ public class JournalEntryApiMapper
     public JournalEntry ToDomainEntity(JournalEntryDto journalEntryDto)
     {
         return new JournalEntry(
-            journalEntryDto.Id,
+            Guid.Empty,
             journalEntryDto.Category,
             journalEntryDto.Comment,
             journalEntryDto.Date,
@@ -19,14 +19,15 @@ public class JournalEntryApiMapper
 
     public JournalEntryDto ToDto(JournalEntry journalEntry)
     {
-        return new JournalEntryDto(
-            journalEntry.Id,
-            journalEntry.Category,
-            journalEntry.Comment,
-            journalEntry.Date,
-            journalEntry.DistanceInKilometers, 
-            journalEntry.Cost
-        );
+        return new JournalEntryDto()
+        {
+            Id = journalEntry.Id,
+            Category = journalEntry.Category,
+            Comment = journalEntry.Comment,
+            Date = journalEntry.Date,
+            DistanceInKilometers = journalEntry.DistanceInKilometers,
+            Cost = journalEntry.Cost
+        };
     }
 
     public IEnumerable<JournalEntryDto> ToDtos(IEnumerable<JournalEntry> journalEntries)

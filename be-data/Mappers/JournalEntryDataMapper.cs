@@ -5,7 +5,7 @@ namespace be_data.Mappers;
 
 public class JournalEntryDataMapper
 {
-    public JournalEntry ToDomainEntity(JournalEntryModel journalEntryModel)
+    public JournalEntry? ToDomainEntity(JournalEntryModel journalEntryModel)
     {
         return new JournalEntry(
             journalEntryModel.Id,
@@ -20,7 +20,7 @@ public class JournalEntryDataMapper
     public JournalEntryModel ToModel(JournalEntry journalEntry)
     {
         return new JournalEntryModel(
-            journalEntry.Id,
+            Guid.NewGuid(),
             journalEntry.Category,
             journalEntry.Comment,
             journalEntry.Date,

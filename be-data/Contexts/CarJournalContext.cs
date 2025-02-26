@@ -1,4 +1,5 @@
-using be_data.entities;
+using be_data.Models;
+using be_domain.Entities;
 
 namespace be_data.contexts;
 
@@ -6,7 +7,11 @@ using Microsoft.EntityFrameworkCore;
 
 public class CarJournalContext : DbContext
 {
-    public DbSet<JournalEntryEntity> JournalEntries { get; set; }
+    public CarJournalContext(DbContextOptions<CarJournalContext> options) : base(options)
+    {
+        
+    }
+    public virtual DbSet<JournalEntryModel> JournalEntries { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

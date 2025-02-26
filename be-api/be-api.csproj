@@ -14,5 +14,10 @@
     <ItemGroup>
         <Reference Include="../be-domain/be-domain.csproj"/>
     </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\be-data\be-data.csproj" />
+      <ProjectReference Include="..\be-domain\be-domain.csproj" />
+    </ItemGroup>
 
 </Project>

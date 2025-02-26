@@ -1,4 +1,7 @@
-using be_api.models;
+using be_api.Dtos;
+using be_api.Mappers;
+using be_domain.Interfaces.Services;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace be_api.controllers;
@@ -10,21 +13,25 @@ namespace be_api.controllers;
 [ApiController]
 public class JournalEntryController : Controller
 {
-    private List<JournalEntryModel> _journalEntries = new List<JournalEntryModel>()
+    private readonly IJournalEntryApiService _journalEntryApiService;
+    private readonly JournalEntryApiMapper _journalEntryApiMapper;
+
+    public JournalEntryController(IJournalEntryApiService journalEntryApiService, JournalEntryApiMapper journalEntryApiMapper)
     {
-        new JournalEntryModel("gas", "Testing", new DateOnly(2025,01,19), 15945, 596),
-        new JournalEntryModel("service", "Mekonomen", new DateOnly(2025, 01, 15), 16721, 4800)
-    };
-    
+        _journalEntryApiService = journalEntryApiService;
+        _journalEntryApiMapper = journalEntryApiMapper;
+    }
+
     /// <summary>
-    /// Get all journal entries without any filtering
+    /// Get all Journal Entries as DTOs
     /// </summary>
     /// <returns>All journal entries</returns>
     [HttpGet]
-    public IEnumerable<JournalEntryModel> GetAllJournalEntries()
+    public async Task<IEnumerable<JournalEntryDto>> GetAllJournalEntries()
     {
-        var journalEntries = _journalEntries;
-        return journalEntries; 
+        var journalEntries = await _journalEntryApiService.GetAllJournalEntriesAsync();
+        
+        return _journalEntryApiMapper.ToDtos(journalEntries); 
     }
 
     /// <summary>
@@ -33,52 +40,53 @@ public class JournalEntryController : Controller
     /// <param name="id"></param>
     /// <returns>The requested journal entry</returns>
     [HttpGet("{id}")]
-    public async Task<JournalEntryModel> GetJournalEntry(Guid id)
+    public async Task<JournalEntryDto> GetJournalEntryById(Guid id)
     {
-        var journalEntry = _journalEntries.FirstOrDefault(j => j.Id == id);
-        
-        return journalEntry;
+        var journalEntry = await _journalEntryApiService.GetJournalEntryById(id);
+        return _journalEntryApiMapper.ToDto(journalEntry);
     }
     
     /// <summary>
     /// Add a journal entry to the database
     /// </summary>
-    /// <param name="journalEntryModel"></param>
+    /// <param name="journalEntryDto"></param>
     /// <returns>The added JournalEntryModel</returns>
     [HttpPost]
-    public IActionResult AddJournalEntry([FromBody] JournalEntryModel journalEntryModel)
+    public Task<IActionResult> AddJournalEntry([FromBody] JournalEntryDto journalEntryDto)
     {
-        if (journalEntryModel == null)
-        {
-            return BadRequest();
-        }
+        var journalEntry = _journalEntryApiMapper.ToDomainEntity(journalEntryDto);
+        _journalEntryApiService.AddJournalEntry(journalEntry);
         
-        _journalEntries.Add(journalEntryModel);
-        
-        return Ok(journalEntryModel);
+        return Task.FromResult<IActionResult>(Ok());
     }
 
     /// <summary>
     /// Update an existing journal entry with new data
     /// </summary>
     /// <param name="id"></param>
-    /// <param name="journalEntryModel"></param>
+    /// <param name="journalEntryDto"></param>
     /// <returns>The data from the updated journal entry</returns>
     [HttpPut("{id}")]
-    public IActionResult UpdateJournalEntry(Guid id, [FromBody] JournalEntryModel journalEntryModel)
+    public async Task<IActionResult> UpdateJournalEntry(Guid id, [FromBody] JournalEntryDto journalEntryDto)
     {
-        var existingJournalEntry = _journalEntries.FirstOrDefault(j => j.Id == id);
-        if (existingJournalEntry == null)
-        {
-            return BadRequest();
-        }
+        var existingJournalEntry = await _journalEntryApiService.GetJournalEntryById(id);
         
-        existingJournalEntry.Type = journalEntryModel.Type;
-        existingJournalEntry.Comment = journalEntryModel.Comment;
-        existingJournalEntry.Date = journalEntryModel.Date;
-        existingJournalEntry.DistanceInKilometers = journalEntryModel.DistanceInKilometers;
-        existingJournalEntry.Cost = journalEntryModel.Cost;
+        existingJournalEntry.Category = journalEntryDto.Category;
+        existingJournalEntry.Comment = journalEntryDto.Comment;
+        existingJournalEntry.Date = journalEntryDto.Date;
+        existingJournalEntry.DistanceInKilometers = journalEntryDto.DistanceInKilometers;
+        existingJournalEntry.Cost = journalEntryDto.Cost;
+        
+        await _journalEntryApiService.UpdateJournalEntry(existingJournalEntry);
         
         return Ok(existingJournalEntry);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> DeleteJournalEntry(Guid id)
+    {
+        await _journalEntryApiService.DeleteJournalEntry(id);
+        
+        return Ok();
     }
 }

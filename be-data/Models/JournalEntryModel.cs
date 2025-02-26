@@ -1,4 +1,4 @@
-namespace be_api.models;
+namespace be_data.Models;
 
 public class JournalEntryModel
 {
@@ -11,6 +11,7 @@ public class JournalEntryModel
 
     public JournalEntryModel(string type, string comment, DateOnly date, int distanceInKilometers, int cost)
     {
+        Id = Guid.NewGuid();
         Type = type;
         Comment = comment;
         Date = date;

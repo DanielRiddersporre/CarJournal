@@ -1,6 +1,6 @@
 namespace DefaultNamespace;
 
-public class JournalEntryService
+public class JournalEntryApiService
 {
     
 }

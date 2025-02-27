@@ -23,7 +23,7 @@ public class JournalEntryController : Controller
     }
 
     /// <summary>
-    /// Get all Journal Entries as DTOs
+    /// Get all Journal Entries.
     /// </summary>
     /// <returns>All journal entries</returns>
     [HttpGet]
@@ -52,12 +52,12 @@ public class JournalEntryController : Controller
     /// <param name="journalEntryDto"></param>
     /// <returns>The added JournalEntryModel</returns>
     [HttpPost]
-    public Task<IActionResult> AddJournalEntry([FromBody] JournalEntryDto journalEntryDto)
+    public async Task<IActionResult> AddJournalEntry([FromBody] JournalEntryDto journalEntryDto)
     {
         var journalEntry = _journalEntryApiMapper.ToDomainEntity(journalEntryDto);
-        _journalEntryApiService.AddJournalEntry(journalEntry);
+        await _journalEntryApiService.AddJournalEntry(journalEntry);
         
-        return Task.FromResult<IActionResult>(Ok());
+        return Ok(journalEntry);
     }
 
     /// <summary>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/daniel-riddersporre/code/applications/CarJournal/be-api/be-api.csproj": {}
+    "/home/daniel-riddersporre/code/applications/car_journal_be/be-api/be-api.csproj": {}
   },
   "projects": {
-    "/home/daniel-riddersporre/code/applications/CarJournal/be-api/be-api.csproj": {
+    "/home/daniel-riddersporre/code/applications/car_journal_be/be-api/be-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/daniel-riddersporre/code/applications/CarJournal/be-api/be-api.csproj",
+        "projectUniqueName": "/home/daniel-riddersporre/code/applications/car_journal_be/be-api/be-api.csproj",
         "projectName": "be-api",
-        "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-api/be-api.csproj",
+        "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-api/be-api.csproj",
         "packagesPath": "/home/daniel-riddersporre/.nuget/packages/",
-        "outputPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-api/obj/",
+        "outputPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/daniel-riddersporre/.nuget/NuGet/NuGet.Config"
@@ -27,11 +27,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj": {
-                "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj"
+              "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj": {
+                "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj"
               },
-              "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj": {
-                "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj"
+              "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj": {
+                "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj"
               }
             }
           }
@@ -76,18 +76,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj": {
+    "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj",
+        "projectUniqueName": "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj",
         "projectName": "be-data",
-        "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj",
+        "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj",
         "packagesPath": "/home/daniel-riddersporre/.nuget/packages/",
-        "outputPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-data/obj/",
+        "outputPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/daniel-riddersporre/.nuget/NuGet/NuGet.Config"
@@ -103,8 +103,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj": {
-                "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj"
+              "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj": {
+                "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj"
               }
             }
           }
@@ -156,18 +156,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj": {
+    "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj",
+        "projectUniqueName": "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj",
         "projectName": "be-domain",
-        "projectPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/be-domain.csproj",
+        "projectPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/be-domain.csproj",
         "packagesPath": "/home/daniel-riddersporre/.nuget/packages/",
-        "outputPath": "/home/daniel-riddersporre/code/applications/CarJournal/be-domain/obj/",
+        "outputPath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/daniel-riddersporre/.nuget/NuGet/NuGet.Config"
@@ -216,7 +216,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.102/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/9.0.103/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -43,3 +43,20 @@ coverage/
 *.tar
 *.rar
 
+# Ignore build directories
+bin/
+obj/
+
+# Ignore specific file types
+*.dll
+*.pdb
+*.deps.json
+*.json
+*.cache
+*.txt
+*.editorconfig
+*.AssemblyInfo.cs
+*.sourcelink.json
+*.nuget.dgspec.json
+*.packagespec.json
+

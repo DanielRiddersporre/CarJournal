@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2p1WEJ5NG/A=",
+  "dgSpecHash": "O0WcNhgbs74=",
   "success": true,
-  "projectFilePath": "/home/daniel-riddersporre/code/applications/CarJournal/be-data/be-data.csproj",
+  "projectFilePath": "/home/daniel-riddersporre/code/applications/car_journal_be/be-data/be-data.csproj",
   "expectedPackageFiles": [
     "/home/daniel-riddersporre/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/home/daniel-riddersporre/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",

@@ -10,3 +10,15 @@
 /home/daniel-riddersporre/code/applications/CarJournal/be-domain/obj/Debug/net9.0/refint/be-domain.dll
 /home/daniel-riddersporre/code/applications/CarJournal/be-domain/obj/Debug/net9.0/be-domain.pdb
 /home/daniel-riddersporre/code/applications/CarJournal/be-domain/obj/Debug/net9.0/ref/be-domain.dll
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/bin/Debug/net9.0/be-domain.deps.json
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/bin/Debug/net9.0/be-domain.dll
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/bin/Debug/net9.0/be-domain.pdb
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.AssemblyInfoInputs.cache
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.AssemblyInfo.cs
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.csproj.CoreCompileInputs.cache
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.sourcelink.json
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.dll
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/refint/be-domain.dll
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/be-domain.pdb
+/home/daniel-riddersporre/code/applications/car_journal_be/be-domain/obj/Debug/net9.0/ref/be-domain.dll

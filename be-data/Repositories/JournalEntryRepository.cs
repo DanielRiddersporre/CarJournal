@@ -11,7 +11,10 @@ public class JournalEntryRepository : IJournalEntryRepository
     private readonly CarJournalContext _carJournalContext;
     private readonly JournalEntryDataMapper _journalEntryDataMapper;
 
-    public JournalEntryRepository(CarJournalContext carJournalContext, JournalEntryDataMapper journalEntryDataMapper)
+    public JournalEntryRepository(
+        CarJournalContext carJournalContext,
+        JournalEntryDataMapper journalEntryDataMapper
+    )
     {
         _carJournalContext = carJournalContext;
         _journalEntryDataMapper = journalEntryDataMapper;
@@ -50,10 +53,12 @@ public class JournalEntryRepository : IJournalEntryRepository
 
     public Task DeleteJournalEntry(Guid journalEntryId)
     {
-        var journalEntryModel = _carJournalContext.JournalEntries.FirstOrDefault(j => j.Id == journalEntryId);
+        var journalEntryModel = _carJournalContext.JournalEntries.FirstOrDefault(j =>
+            j.Id == journalEntryId
+        );
         _carJournalContext.Remove(journalEntryModel);
         _carJournalContext.SaveChanges();
-        
+
         return Task.CompletedTask;
     }
 }

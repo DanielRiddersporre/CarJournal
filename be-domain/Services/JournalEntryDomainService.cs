@@ -36,4 +36,9 @@ public class JournalEntryDomainService
     {
         _journalEntryRepository.DeleteJournalEntry(journalEntryId);
     }
+
+    public async Task<int> GetTotalFuelCostsAsync()
+    {
+        return await _journalEntryRepository.GetTotalFuelCostsAsync();
+    }
 }

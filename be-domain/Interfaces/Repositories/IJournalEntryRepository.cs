@@ -8,4 +8,5 @@ public interface IJournalEntryRepository
     void AddJournalEntry(JournalEntry journalEntry);
     void UpdateJournalEntry(JournalEntry journalEntry);
     Task DeleteJournalEntry(Guid journalEntryId);
+    Task<int> GetTotalFuelCostsAsync();
 }

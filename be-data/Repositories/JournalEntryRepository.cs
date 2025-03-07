@@ -61,4 +61,17 @@ public class JournalEntryRepository : IJournalEntryRepository
 
         return Task.CompletedTask;
     }
+
+    public async Task<int> GetTotalFuelCostsAsync()
+    {
+        int totalCost = 0;
+        var entries = _carJournalContext.JournalEntries.Where(j => j.Category == "Tankning");
+
+        foreach (var entry in entries)
+        {
+            totalCost += entry.Cost;
+        }
+
+        return totalCost;
+    }
 }

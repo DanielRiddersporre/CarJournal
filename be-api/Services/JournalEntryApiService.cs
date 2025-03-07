@@ -42,4 +42,9 @@ public class JournalEntryApiService : IJournalEntryApiService
         _journalEntryDomainService.DeleteJournalEntry(journalEntryId);
         return Task.CompletedTask;
     }
+
+    public async Task<int> GetTotalFuelCostsAsync()
+    {
+        return await _journalEntryDomainService.GetTotalFuelCostsAsync();
+    }
 }
